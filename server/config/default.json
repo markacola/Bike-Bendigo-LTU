@@ -5,5 +5,51 @@
   "paginate": {
     "default": 10,
     "max": 50
-  }
+  },
+  "authentication": {
+    "secret": "0ed74d1976a09e47790368b8cc792528555d2599cbd79dfa6c15b1c7ea035e7ce53b4d040a49bdfefd1d9f25afeb055efd5810ec0d28edf2628460f7dfce8f45446e8d025a25173bb7f7dfc65806a8778a9aaf8696f7533474842fe58d1475f4417d0a8dd42c1c6bac5a246b0dbf79f048a85b5d96278d862aca7cad63628f665922da6164979d6b80a1330392d01d6bfe85023477332cdc96d82daecbc54bb11b01e5f33b9b5667c54bc66b3c36a4402f6e4c696a2a87fa2d545f9595da3e17889fa067bd4ed0517c569f2b38875eeea72853653f72dd5344772f9bb0636f215095f41700ba50838c56a95f7bbaf56d042fdf7351c56bcf12bd81f1b42180ab",
+    "strategies": [
+      "jwt"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "type": "access"
+      },
+      "audience": "https://bike-bendigo-ltu-api.doomsdaytuna.io",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "facebook": {
+      "clientID": "829419417206171",
+      "clientSecret": "f4cba0aa07307e9846e1ff20b90dcf2c",
+      "successRedirect": "/",
+      "scope": [
+        "public_profile",
+        "email"
+      ],
+      "profileFields": [
+        "id",
+        "displayName",
+        "first_name",
+        "last_name",
+        "email",
+        "gender",
+        "profileUrl",
+        "birthday",
+        "picture",
+        "permissions"
+      ]
+    },
+    "cookie": {
+      "enabled": true,
+      "name": "feathers-jwt",
+      "httpOnly": false,
+      "secure": false
+    }
+  },
+  "mongodb": "mongodb://localhost:27017/bike_bendigo_ltu"
 }

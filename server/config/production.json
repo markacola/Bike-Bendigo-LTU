@@ -1,4 +1,5 @@
 {
-  "host": "bike-bendigo-ltu-app.feathersjs.com",
-  "port": "PORT"
+  "host": "bike-bendigo-ltu-api.doomsdaytuna.io",
+  "port": "PORT",
+  "mongodb": "MONGO_URI"
 }

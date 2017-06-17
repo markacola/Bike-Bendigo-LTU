@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: bike-bendigo-ltu-api
+  annotations:
+    kubernetes.io/tls-acme: "true"
+spec:
+  tls:
+    - secretName: rg-tlrg-com-au-tls
+      hosts:
+      - "bike-bendigo-ltu-api.doomsdaytuna.io"
+  rules:
+    - host: "bike-bendigo-ltu-api.doomsdaytuna.io"
+      http:
+        paths:
+        - path: /
+          backend:
+            serviceName: bike-bendigo-ltu-api
+            servicePort: 80
