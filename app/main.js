@@ -28,14 +28,6 @@ const withState = provideState({
     getUser: async effects => {
       const jwt = await app.passport.getJWT();
       const payload = await app.passport.verifyJWT(jwt);
-      console.log(
-        typeof payload,
-        payload._id,
-        'payload:',
-        payload,
-        'jwt: ',
-        jwt,
-      );
       const { userId } = payload;
       const user = await app.service('users').get(userId);
       await effects.setUser(user);
