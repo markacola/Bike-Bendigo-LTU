@@ -13,6 +13,7 @@ import app from './feathers';
 
 import Home from './screens/Home';
 import Login from './screens/Login';
+import CampusFacilities from './screens/CampusFacilities';
 
 // set this to something like '/login' to be redirected to the login screen
 const DEV_REDIRECT = '';
@@ -75,7 +76,8 @@ class App extends React.Component {
             {DEV_REDIRECT && <Redirect from="/" exact to={DEV_REDIRECT} />}
             <Route path="/login" component={Login} />
             {user === false && <Redirect to="/login" />}
-            <Route path="/" extact component={Home} />
+            <Route path="/" exact component={Home} />
+            <Route path="/campus-facilities" component={CampusFacilities} />
           </Switch>
         </View>
       </Router>
