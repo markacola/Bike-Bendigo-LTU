@@ -7,7 +7,7 @@ import authentication from 'feathers-authentication-client';
 // Need to require instead of import so we can set the user agent first
 const io = require('socket.io-client/dist/socket.io');
 
-const host = 'http://192.168.43.184:3030';
+const host = 'http://bike-bendigo-ltu-api.doomsdaytuna.io';
 const socket = io(host, { transports: ['websocket'] });
 
 // Set up Feathers client side
