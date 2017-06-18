@@ -1,7 +1,13 @@
 import React from 'react';
 import Expo from 'expo';
 import { provideState, injectState } from 'freactal';
-import { Platform, StatusBar, StyleSheet, View } from 'react-native';
+import {
+  Dimensions,
+  Platform,
+  StatusBar,
+  StyleSheet,
+  View,
+} from 'react-native';
 import { Spinner } from 'native-base';
 import {
   NativeRouter as Router,
@@ -16,6 +22,8 @@ import Login from './screens/Login';
 
 // set this to something like '/login' to be redirected to the login screen
 const DEV_REDIRECT = '';
+
+const { height, width } = Dimensions.get('window');
 
 const withState = provideState({
   initialState: () => ({
@@ -42,6 +50,7 @@ class App extends React.Component {
     await Expo.Font.loadAsync({
       Roboto: require('native-base/Fonts/Roboto.ttf'),
       Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
+      Ionicons: require('native-base/Fonts/Ionicons.ttf'),
     });
     this.props.effects.setLoading(false);
     try {
@@ -62,7 +71,10 @@ class App extends React.Component {
   }
   render() {
     const { state: { loading, user } } = this.props;
-    if (loading || user == null) {
+    if (loading) {
+      return <Expo.AppLoading />;
+    }
+    if (user == null) {
       return <Spinner />;
     }
     return (
@@ -85,8 +97,8 @@ class App extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    height: null,
-    width: null,
+    height,
+    width,
   },
   statusBarUnderlay: {
     height: 24,

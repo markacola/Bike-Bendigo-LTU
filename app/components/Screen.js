@@ -9,26 +9,41 @@ import {
   Title,
   Right,
   Content,
-  Drawer,
 } from 'native-base';
 import { Text } from 'react-native';
+import Drawer from 'react-native-drawer';
+import Sidebar from './Sidebar';
 
-export default class AppFrame extends Component {
+export default class Screen extends Component {
+  state = { menuOpen: false };
   closeDrawer = () => {
-    this.drawer.close();
+    this.setState({ menuOpen: false });
   };
   openDrawer = () => {
-    this.drawer.open();
+    this.setState({ menuOpen: true });
   };
   render() {
     const { title, children } = this.props;
+    const { menuOpen, mainOverlayOpacity } = this.state;
     return (
-      // <Drawer ref={c => this.drawer = c} content={<Text>Sidebar</Text>}>
-      (
+      <Drawer
+        tapToClose
+        open={menuOpen}
+        openDrawerOffset={0.2}
+        content={<Sidebar onClose={this.closeDrawer} />}
+        onClose={this.closeDrawer}
+        styles={{
+          mainOverlay: {
+            backgroundColor: menuOpen ? 'rgba(0,0,0,0.5)' : 'transparent',
+          },
+        }}>
         <Container>
           <Header>
             <Left>
-              <Button transparent onPress={this.openDrawer}>
+              <Button
+                transparent
+                onPress={() =>
+                  menuOpen ? this.closeDrawer() : this.openDrawer()}>
                 <Icon name="menu" />
               </Button>
             </Left>
@@ -41,8 +56,7 @@ export default class AppFrame extends Component {
             {children}
           </Content>
         </Container>
-      )
-      // </Drawer>
+      </Drawer>
     );
   }
 }
