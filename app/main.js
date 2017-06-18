@@ -25,7 +25,7 @@ import Settings from './screens/Settings';
 import RecordRide from './screens/RecordRide';
 
 // set this to something like '/login' to be redirected to the login screen
-const DEV_REDIRECT = '/settings';
+const DEV_REDIRECT = '';
 
 const { height, width } = Dimensions.get('window');
 
