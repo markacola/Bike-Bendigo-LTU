@@ -20,7 +20,6 @@
     "comma-dangle": 0,
     "quotes": [ 1, "single" ],
     "no-undef": 1,
-    "no-unused-vars": 1,
     "global-require": 0,
     "no-mixed-operators": 0,
     "no-param-reassign": 0,
@@ -31,6 +30,6 @@
     "no-sequences": 0,
     "react/jsx-closing-bracket-location": 0,
     "react/jsx-uses-react": 1,
-    "react/jsx-uses-vars": 1
+    "react/jsx-no-undef": 1
   }
 }
