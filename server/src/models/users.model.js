@@ -20,10 +20,10 @@ module.exports = function(app) {
       givenName: String,
       displayPicture: String,
       gender: { type: String, enum: ['male', 'female', 'other'] },
-      rideLevel: Number,
       rides: [ride],
+      rideLevel: Number,
       studentDetails: {
-        course: String,
+        department: String,
         yearStarted: Number,
       },
     },
