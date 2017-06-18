@@ -28,6 +28,7 @@ module.exports = function(app) {
       department: String,
       addresses: [
         {
+          label: String,
           address: String,
           location: Point,
         },
