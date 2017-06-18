@@ -1,7 +1,6 @@
 import React from 'react';
-import { Text, View, StyleSheet, Button, Alert } from 'react-native';
-import { Link } from 'react-router-native';
-import { Constants } from 'expo';
+import { Text, View, StyleSheet, Button } from 'react-native';
+import { Link, Switch, Route } from 'react-router-native';
 
 import Screen from '../components/Screen';
 
