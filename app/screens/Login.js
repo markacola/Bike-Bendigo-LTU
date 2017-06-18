@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Expo from 'expo';
+import Expo, { Constants } from 'expo';
 import { injectState } from 'freactal';
-import { Dimensions, View, Text } from 'react-native';
-import { Button } from 'native-base';
+import { Dimensions, View, Text, Image, StyleSheet, Button } from 'react-native';
+//import { Button } from 'native-base';
 import app from '../feathers';
 
 const { width, height } = Dimensions.get('window');
@@ -38,12 +38,33 @@ class Login extends Component {
           justifyContent: 'center',
           alignItems: 'center',
         }}>
-        <Button onPress={this.login}>
+          <Image
+              style={{width: 300, height: 300}}
+              source={require('../assets/images/bbltu-logo-trans.png')}
+          />
+        <Button onPress={this.login} title="Login with Facebook" style={styles}>
           <Text>Login with Facebook</Text>
         </Button>
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingTop: Constants.statusBarHeight,
+        backgroundColor: '#34495e',
+    },
+    paragraph: {
+        margin: 24,
+        fontSize: 18,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        color: '#ecf0f1',
+    },
+});
 
 export default Login;
