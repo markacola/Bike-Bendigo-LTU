@@ -22,6 +22,7 @@ module.exports = function(app) {
       gender: { type: String, enum: ['male', 'female', 'other'] },
       rides: [ride],
       ridingLevel: Number,
+      ridingGoal: Number,
       department: String,
       addresses: [
         {
