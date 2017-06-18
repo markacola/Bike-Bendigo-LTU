@@ -1,101 +1,135 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, Button, Alert } from 'react-native';
-import { Constants } from 'expo';
+import { Text, View, StyleSheet, Button } from 'react-native';
 
 export default class HomePage extends Component {
 
-    render() {
-        return (
-            <View style={styles.mainContainer}>
-                <View style={styles.toolbar}>
-                    <Text style={styles.toolbarButton}>Add</Text>
-                    <Text style={styles.toolbarTitle}>This is the title</Text>
-                    <Text style={styles.toolbarButton}>Like</Text>
-                </View>
-                <View style={styles.content}>
-                    {/* Top section of two main stats */}
-                    <View style={styles.topStats}>
-                        <View style={styles.mainStat}>
-                            <Text style={styles.count}>89</Text>
-                            <Text style={styles.info}>Total Days</Text>
-                        </View>
-                        <View style={styles.mainStat}>
-                            <Text style={styles.count}>89</Text>
-                            <Text style={styles.info}>Total Days</Text>
-                        </View>
-                    </View>
-
-                    {/* Second section, 3 smaller stats */}
-                    <View style={styles.secondStats}>
-                        <View style={styles.mainStat}>
-                            <Text style={styles.count}>$20.50</Text>
-                            <Text style={styles.info}>Total Saved</Text>
-                        </View>
-                        <View style={styles.mainStat}>
-                            <Text style={styles.count}>89kg</Text>
-                            <Text style={styles.info}>my emissions saved</Text>
-                        </View>
-                        <View style={styles.mainStat}>
-                            <Text style={styles.count}>687kg</Text>
-                            <Text style={styles.info}>campus emissions saved</Text>
-                        </View>
-                    </View>
-
-                    {/* END NEW CODE */}
-
-                </View>
-                <View style={styles.content}>
-                    {/* Main content section */}
-                    <Text>More content </Text>
-                </View>
-
+  render() {
+    return (
+      <View style={styles.mainContainer}>
+        <View style={styles.topContent}>
+          <View style={styles.topStats}>
+            <View style={styles.mainStat}>
+              <Text style={styles.count}>13</Text>
+              <Text style={styles.info}>days ridden</Text>
             </View>
-        );
-    }
+            <View style={styles.mainStat}>
+              <Text style={styles.count}>64</Text>
+              <Text style={styles.info}>kms ridden</Text>
+            </View>
+          </View>
+
+          <View style={styles.secondStats}>
+            <View style={styles.secondaryStat}>
+              <Text style={[styles.count, styles.secondaryStat]}>$20.50</Text>
+              <Text style={styles.info}>saved on petrol</Text>
+            </View>
+            <View style={styles.secondaryStat}>
+              <Text style={[styles.count, styles.secondaryStat]}>89kg</Text>
+              <Text style={styles.info}>my emissions saved</Text>
+            </View>
+            <View style={styles.secondaryStat}>
+              <Text style={[styles.count, styles.secondaryStat]}>687kg</Text>
+              <Text style={styles.info}>campus emissions saved</Text>
+            </View>
+          </View>
+
+          <View style={styles.todaysTip}>
+            <Text style={styles.tipText}>
+              If you bike to Uni today you will save $3.80 in petrol.  If you bike all week, that's an extra $19 to spend on beer!
+                    </Text>
+          </View>
+        </View>
+        <View style={styles.bottomContent}>
+          <View style={styles.todaysInfo}>
+            <Text style={styles.todaysInfoText}>Hey Jack, your facebook friend Jenny Delaney is biking today!</Text>
+          </View>
+          <View style={styles.logRide}>
+            <Button title="I'm biking today" backgroundColor='#2196f3'></Button>
+          </View>
+        </View>
+
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
-    toolbar: {
-        backgroundColor: '#81c04d',
-        paddingTop: 30,
-        paddingBottom: 10,
-        flexDirection: 'row'
-    },
-    toolbarButton: {
-        width: 50,
-        color: '#fff',
-        textAlign: 'center'
-    },
-    toolbarTitle: {
-        color: '#fff',
-        textAlign: 'center',
-        fontWeight: 'bold',
-        flex: 1
-    },
-    mainContainer: {
-        flex: 1
-    },
-    content: {
-        backgroundColor: '#ebeef0',
-        flex: 1
-    },
-    topStats: {
-        backgroundColor: '#cdd000',
-        flexDirection: 'row',
-        flex: 1,
-        justifyContent: 'space-around'
-    },
-    mainStat: {
-        textAlign: 'center'
-    },
-    count: {
-        fontWeight: 'bold'
-    },
-    secondStats: {
-        backgroundColor: '#9999cc',
-        flexDirection: 'row',
-        flex: 1,
-        justifyContent: 'space-around'
-    }
+  mainContainer: {
+    flex: 1
+  },
+  topContent: {
+    flex: 2
+  },
+  bottomContent: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'space-around'
+  },
+  topStats: {
+    flexDirection: 'row',
+    flex: 0.8,
+    justifyContent: 'space-around',
+    marginTop: 25
+  },
+  mainStat: {
+    textAlign: 'center'
+  },
+  count: {
+    fontWeight: 'bold',
+    textAlign: 'center',
+    fontSize: 50
+  },
+  secondStats: {
+    flexDirection: 'row',
+    flex: 0.5,
+    justifyContent: 'space-around',
+    marginBottom: 20
+  },
+  secondaryStat: {
+    textAlign: 'center',
+    fontSize: 20,
+    width: 90
+  },
+  info: {
+    textAlign: 'center',
+    color: '#444'
+  },
+  todaysTip: {
+    backgroundColor: '#bb285c',
+    flex: 0.8,
+    textAlign: 'center',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    padding: 10
+  },
+  tipText: {
+    color: "#fff",
+    fontSize: 18,
+    fontStyle: 'italic',
+    textAlign: 'center'
+  },
+  todaysInfo: {
+    textAlign: 'center',
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 15,
+    borderTopLeftRadius: 0,
+    borderBottomRightRadius: 0,
+    borderWidth: 0.5,
+    borderColor: '#d6d7da',
+    margin: 25
+  },
+  todaysInfoText: {
+    textAlign: 'center',
+    paddingLeft: 13,
+    paddingRight: 13
+  },
+  logRide: {
+    flex: 1,
+    justifyContent: 'flex-start'
+  }
 
 });
+
