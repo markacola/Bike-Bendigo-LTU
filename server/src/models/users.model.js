@@ -21,11 +21,14 @@ module.exports = function(app) {
       displayPicture: String,
       gender: { type: String, enum: ['male', 'female', 'other'] },
       rides: [ride],
-      rideLevel: Number,
-      studentDetails: {
-        department: String,
-        yearStarted: Number,
-      },
+      ridingLevel: Number,
+      department: String,
+      addresses: [
+        {
+          address: String,
+          location: Point,
+        },
+      ],
     },
     { timestamps: true },
   );
