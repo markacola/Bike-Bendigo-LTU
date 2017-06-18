@@ -10,6 +10,8 @@ module.exports = function(app) {
       date: Date,
       from: Point,
       to: Point,
+      // In kms
+      distance: Number,
     },
     { timestamps: true },
   );
