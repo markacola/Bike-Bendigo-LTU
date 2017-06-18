@@ -82,6 +82,10 @@ function BikeLockers() {
         style={{ width: 400, height: 267 }}
         source={require('../assets/images/lockers.png')}
       />
+      <Text style={{color: 'blue'}}
+            onPress={() => Linking.openURL('http://www.latrobe.edu.au/__data/assets/pdf_file/0003/153192/bendigo-locker-map.pdf')}>
+        View the Bendigo bicycle locker and shower location map
+      </Text>
     </View>
   );
 }
@@ -100,6 +104,10 @@ function Showers() {
         style={{ width: 400, height: 267 }}
         source={require('../assets/images/showers.png')}
       />
+      <Text style={{color: 'blue'}}
+            onPress={() => Linking.openURL('http://www.latrobe.edu.au/__data/assets/pdf_file/0003/153192/bendigo-locker-map.pdf')}>
+        View the Bendigo bicycle locker and shower location map
+      </Text>
     </View>
   );
 }
