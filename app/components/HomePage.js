@@ -7,25 +7,25 @@ export default class HomePage extends Component {
       <View style={styles.mainContainer}>
         <View style={styles.topContent}>
           <View style={styles.topStats}>
-            <View style={styles.mainStat}>
+            <View>
               <Text style={styles.count}>13</Text>
               <Text style={styles.info}>days ridden</Text>
             </View>
-            <View style={styles.mainStat}>
+            <View>
               <Text style={styles.count}>64</Text>
               <Text style={styles.info}>kms ridden</Text>
             </View>
           </View>
           <View style={styles.secondStats}>
-            <View style={styles.secondaryStat}>
+            <View>
               <Text style={[styles.count, styles.secondaryStat]}>$20.50</Text>
               <Text style={styles.info}>saved on petrol</Text>
             </View>
-            <View style={styles.secondaryStat}>
+            <View>
               <Text style={[styles.count, styles.secondaryStat]}>89kg</Text>
               <Text style={styles.info}>my emissions saved</Text>
             </View>
-            <View style={styles.secondaryStat}>
+            <View>
               <Text style={[styles.count, styles.secondaryStat]}>687kg</Text>
               <Text style={styles.info}>campus emissions saved</Text>
             </View>
@@ -70,9 +70,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     marginTop: 25,
   },
-  mainStat: {
-    textAlign: 'center',
-  },
   count: {
     fontWeight: 'bold',
     textAlign: 'center',
@@ -85,7 +82,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   secondaryStat: {
-    textAlign: 'center',
     fontSize: 20,
     width: 90,
   },
@@ -96,7 +92,6 @@ const styles = StyleSheet.create({
   todaysTip: {
     backgroundColor: '#bb285c',
     flex: 0.8,
-    textAlign: 'center',
     flexDirection: 'column',
     justifyContent: 'space-around',
     alignItems: 'center',
@@ -109,7 +104,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   todaysInfo: {
-    textAlign: 'center',
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',

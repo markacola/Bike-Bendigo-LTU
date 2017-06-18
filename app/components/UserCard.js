@@ -9,7 +9,7 @@ function IconStat({ icon, label }) {
   return (
     <View style={{ display: 'flex', alignItems: 'center' }}>
       <Icon style={{ color: 'white' }} name={icon} />
-      <Text style={{ color: 'white', alignText: 'center' }}>{label}</Text>
+      <Text style={{ color: 'white', textAlign: 'center' }}>{label}</Text>
     </View>
   );
 }
