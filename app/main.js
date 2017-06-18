@@ -14,6 +14,9 @@ import app from './feathers';
 import Home from './screens/Home';
 import Login from './screens/Login';
 
+// set this to something like '/login' to be redirected to the login screen
+const DEV_REDIRECT = '';
+
 const withState = provideState({
   initialState: () => ({
     loading: true,
@@ -25,14 +28,6 @@ const withState = provideState({
     getUser: async effects => {
       const jwt = await app.passport.getJWT();
       const payload = await app.passport.verifyJWT(jwt);
-      console.log(
-        typeof payload,
-        payload._id,
-        'payload:',
-        payload,
-        'jwt: ',
-        jwt,
-      );
       const { userId } = payload;
       const user = await app.service('users').get(userId);
       await effects.setUser(user);
@@ -77,6 +72,7 @@ class App extends React.Component {
           {Platform.OS === 'android' &&
             <View style={styles.statusBarUnderlay} />}
           <Switch>
+            {DEV_REDIRECT && <Redirect from="/" exact to={DEV_REDIRECT} />}
             <Route path="/login" component={Login} />
             {user === false && <Redirect to="/login" />}
             <Route path="/" extact component={Home} />
