@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, Button } from 'react-native';
-import { Link } from 'react-router-native';
+import { withRouter } from 'react-router-native';
 
+@withRouter
 export default class HomePage extends Component {
   render() {
+    const { history } = this.props;
     return (
       <View style={styles.mainContainer}>
         <View style={styles.topContent}>
@@ -45,9 +47,11 @@ export default class HomePage extends Component {
             </Text>
           </View>
           <View style={styles.logRide}>
-            <Link to="/record-ride">
-              <Button title="I'm biking today" backgroundColor="#2196f3" />
-            </Link>
+            <Button
+              onPress={() => history.push('/record-ride')}
+              title="I'm biking today"
+              backgroundColor="#2196f3"
+            />
           </View>
         </View>
       </View>
