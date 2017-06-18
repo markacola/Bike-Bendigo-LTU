@@ -45,8 +45,8 @@ function Maps() {
         your biking journey easier.
       </Text>
       <Image
-        source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/cat.gif' }}
-        style={{ height: 400, width: 300 }}
+        style={{ width: 400, height: 400 }}
+        source={require('../assets/images/maps.jpg')}
       />
     </View>
   );
@@ -59,14 +59,11 @@ function BikeHub() {
         Bike Hub
       </Text>
       <Text style={styles.paragraph}>
-        Located just under the library the Bendigo Latrobe University Campus is
-        host to our very own Bike Hub. With a bike pump, secure bike racks,
-        lockers and shower facilities this is everything you need for your bike
-        travels right here on campus.
+        A brand new bike storage facility has been built under the Education Building with a bike pump, secure swipe-card access, bike parking, CCTV and showers.
       </Text>
       <Image
-        source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/cat.gif' }}
-        style={{ height: 400, width: 300 }}
+        style={{ width: 400, height: 267 }}
+        source={require('../assets/images/bike-hub.png')}
       />
     </View>
   );
@@ -79,14 +76,16 @@ function BikeLockers() {
         Bike Lockers
       </Text>
       <Text style={styles.paragraph}>
-        The Bendigo Latrobe University Campus has plenty of resources to make
-        your biking journey easier. This includes lockers available at the
-        highlighted locations below.
+        Fifty-six bike lockers are available in five areas of the campus and are free to hire for Bendigo Student Association Platinum Members or $10 per year for others. A refundable $50 lock deposit also applies. Shower facilities are also provided on campus.
       </Text>
       <Image
-        source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/cat.gif' }}
-        style={{ height: 400, width: 300 }}
+        style={{ width: 400, height: 267 }}
+        source={require('../assets/images/lockers.png')}
       />
+      <Text style={{color: 'blue'}}
+            onPress={() => Linking.openURL('http://www.latrobe.edu.au/__data/assets/pdf_file/0003/153192/bendigo-locker-map.pdf')}>
+        View the Bendigo bicycle locker and shower location map
+      </Text>
     </View>
   );
 }
@@ -99,13 +98,16 @@ function Showers() {
       </Text>
       <Text style={styles.paragraph}>
         The Bendigo Latrobe University Campus has plenty of resources to make
-        your biking journey easier. This includes lockers available at the
-        highlighted locations below.
+        your biking journey easier. This includes Showers available throughout the campus.
       </Text>
       <Image
-        source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/cat.gif' }}
-        style={{ height: 400, width: 300 }}
+        style={{ width: 400, height: 267 }}
+        source={require('../assets/images/showers.png')}
       />
+      <Text style={{color: 'blue'}}
+            onPress={() => Linking.openURL('http://www.latrobe.edu.au/__data/assets/pdf_file/0003/153192/bendigo-locker-map.pdf')}>
+        View the Bendigo bicycle locker and shower location map
+      </Text>
     </View>
   );
 }
