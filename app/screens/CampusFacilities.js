@@ -6,106 +6,107 @@ import { Constants } from 'expo';
 import Screen from '../components/Screen';
 
 export default function CampusFacilities() {
-  return <Screen title="Campus Facilities">
-    <Switch>
-      <Route path="/campus-facilities/maps" component={Maps} />
-      <Route path="/campus-facilities/bike-hub" component={BikeHub} />
-      <Route path="/campus-facilities/bike-lockers" component={BikeLockers} />
-      <Route path="/campus-facilities/showers" component={Showers} />
-      <Route render={()=>(
-        <View style={styles.container}>
-          <Link to"/campus-facilities/maps">
-            <Button
-              title="Maps"
-            />
-          </Link>
-          <Link to"/campus-facilities/bike-hub">
-            <Button
-              title="Bike Hub"
-            />
-          </Link>
-          <Link to"/campus-facilities/bike-lockers">
-            <Button
-              title="Bike Lockers"
-            />
-          </Link>
-          <Link to"/campus-facilities/showers">
-            <Button
-              title="Showers"
-            />
-          </Link>
-        </View>
-      )}/>
-    </Switch>
-  </Screen>
-    );
-  }
+  return (
+    <Screen title="Campus Facilities">
+      <Switch>
+        <Route path="/campus-facilities/maps" component={Maps} />
+        <Route path="/campus-facilities/bike-hub" component={BikeHub} />
+        <Route path="/campus-facilities/bike-lockers" component={BikeLockers} />
+        <Route path="/campus-facilities/showers" component={Showers} />
+        <Route
+          render={() =>
+            <View style={styles.container}>
+              <Link to="/campus-facilities/maps">
+                <Button title="Maps" />
+              </Link>
+              <Link to="/campus-facilities/bike-hub">
+                <Button title="Bike Hub" />
+              </Link>
+              <Link to="/campus-facilities/bike-lockers">
+                <Button title="Bike Lockers" />
+              </Link>
+              <Link to="/campus-facilities/showers">
+                <Button title="Showers" />
+              </Link>
+            </View>}
+        />
+      </Switch>
+    </Screen>
+  );
 }
 
 function Maps() {
-  return(
+  return (
     <View style={styles.container}>
-        <Text style={styles.heading}>
-          Maps
-        </Text>
-        <Text style={styles.paragraph}>
-          The Bendigo Latrobe University Campus has plenty of resources to make your biking journey easier.
-        </Text>
-        <Image
-          source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/cat.gif' }}
-          style={{ height: 400, width: 300 }}
-        />
+      <Text style={styles.heading}>
+        Maps
+      </Text>
+      <Text style={styles.paragraph}>
+        The Bendigo Latrobe University Campus has plenty of resources to make
+        your biking journey easier.
+      </Text>
+      <Image
+        source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/cat.gif' }}
+        style={{ height: 400, width: 300 }}
+      />
     </View>
   );
 }
 
 function BikeHub() {
-  return(
+  return (
     <View style={styles.container}>
-        <Text style={styles.heading}>
-          Bike Hub
-        </Text>
-        <Text style={styles.paragraph}>
-          Located just under the library the Bendigo Latrobe University Campus is host to our very own Bike Hub. With a bike pump, secure bike racks, lockers and shower facilities this is everything you need for your bike travels right here on campus.
-        </Text>
-        <Image
-          source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/cat.gif' }}
-          style={{ height: 400, width: 300 }}
-        />
+      <Text style={styles.heading}>
+        Bike Hub
+      </Text>
+      <Text style={styles.paragraph}>
+        Located just under the library the Bendigo Latrobe University Campus is
+        host to our very own Bike Hub. With a bike pump, secure bike racks,
+        lockers and shower facilities this is everything you need for your bike
+        travels right here on campus.
+      </Text>
+      <Image
+        source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/cat.gif' }}
+        style={{ height: 400, width: 300 }}
+      />
     </View>
   );
 }
 
 function BikeLockers() {
-  return(
+  return (
     <View style={styles.container}>
-        <Text style={styles.heading}>
-          Bike Lockers
-        </Text>
-        <Text style={styles.paragraph}>
-          The Bendigo Latrobe University Campus has plenty of resources to make your biking journey easier. This includes lockers available at the highlighted locations below.
-        </Text>
-        <Image
-          source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/cat.gif' }}
-          style={{ height: 400, width: 300 }}
-        />
+      <Text style={styles.heading}>
+        Bike Lockers
+      </Text>
+      <Text style={styles.paragraph}>
+        The Bendigo Latrobe University Campus has plenty of resources to make
+        your biking journey easier. This includes lockers available at the
+        highlighted locations below.
+      </Text>
+      <Image
+        source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/cat.gif' }}
+        style={{ height: 400, width: 300 }}
+      />
     </View>
   );
 }
 
 function Showers() {
-  return(
+  return (
     <View style={styles.container}>
-        <Text style={styles.heading}>
-          Shower Facilities
-        </Text>
-        <Text style={styles.paragraph}>
-          The Bendigo Latrobe University Campus has plenty of resources to make your biking journey easier. This includes lockers available at the highlighted locations below.
-        </Text>
-        <Image
-          source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/cat.gif' }}
-          style={{ height: 400, width: 300 }}
-        />
+      <Text style={styles.heading}>
+        Shower Facilities
+      </Text>
+      <Text style={styles.paragraph}>
+        The Bendigo Latrobe University Campus has plenty of resources to make
+        your biking journey easier. This includes lockers available at the
+        highlighted locations below.
+      </Text>
+      <Image
+        source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/cat.gif' }}
+        style={{ height: 400, width: 300 }}
+      />
     </View>
   );
 }
@@ -140,6 +141,3 @@ const styles = StyleSheet.create({
     color: '#34495e',
   },
 });
-
-  </Screen>;
-}
