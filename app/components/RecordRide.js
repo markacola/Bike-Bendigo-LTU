@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
   },
   rowdata: {
     flexDirection: 'row',
-    justifyContent: 'justify',
+    justifyContent: 'space-between',
     alignItems: 'stretch',
     alignContent: 'stretch',
   },
