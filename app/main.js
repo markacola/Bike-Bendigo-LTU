@@ -14,6 +14,7 @@ import {
   Switch,
   Route,
   Redirect,
+  AndroidBackButton,
 } from 'react-router-native';
 import app from './feathers';
 
@@ -81,6 +82,7 @@ class App extends React.Component {
     return (
       <Router>
         <View style={styles.container}>
+          <AndroidBackButton />
           {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
           {Platform.OS === 'android' &&
             <View style={styles.statusBarUnderlay} />}
