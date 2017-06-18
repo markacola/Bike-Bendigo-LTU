@@ -21,9 +21,10 @@ import app from './feathers';
 import Home from './screens/Home';
 import Login from './screens/Login';
 import CampusFacilities from './screens/CampusFacilities';
+import Settings from './screens/Settings';
 
 // set this to something like '/login' to be redirected to the login screen
-const DEV_REDIRECT = '';
+const DEV_REDIRECT = '/settings';
 
 const { height, width } = Dimensions.get('window');
 
@@ -92,6 +93,7 @@ class App extends React.Component {
             {user === false && <Redirect to="/login" />}
             <Route path="/" exact component={Home} />
             <Route path="/campus-facilities" component={CampusFacilities} />
+            <Route path="/settings" component={Settings} />
           </Switch>
         </View>
       </Router>
