@@ -51,6 +51,7 @@ export default class ProfilePage extends Component {
     await app.service('users').patch(user._id, {
       addresses: [
         {
+          label: 'Home',
           address,
           location: await this.geoCodeAddress(address),
         },
