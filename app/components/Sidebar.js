@@ -35,6 +35,7 @@ export default function Sidebar({ onClose }) {
         bounces={false}
         style={{ flex: 1, backgroundColor: '#2196F3', top: -1 }}>
         <UserCard />
+        <MenuItem icon="home" to="/" label="Home" onPress={onClose} />
         <MenuItem
           icon="calendar"
           to="/history-and-stats"
@@ -61,8 +62,8 @@ export default function Sidebar({ onClose }) {
         />
         <MenuItem
           icon="settings"
-          to="/setting"
-          label="Setting"
+          to="/settings"
+          label="Settings"
           onPress={onClose}
         />
       </Content>
