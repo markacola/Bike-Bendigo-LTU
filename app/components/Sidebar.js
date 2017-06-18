@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-native';
 import { Text } from 'react-native';
 import { Container, Content, ListItem, Left, Body, Icon } from 'native-base';
+import UserCard from './UserCard';
 
 const MenuItem = withRouter(function MenuItem({
   history,
@@ -15,7 +16,7 @@ const MenuItem = withRouter(function MenuItem({
       icon
       onPress={() => {
         onPress();
-        history.push(history);
+        history.push(to);
       }}>
       <Left>
         <Icon style={{ color: 'white' }} name={icon} />
@@ -33,6 +34,7 @@ export default function Sidebar({ onClose }) {
       <Content
         bounces={false}
         style={{ flex: 1, backgroundColor: '#2196F3', top: -1 }}>
+        <UserCard />
         <MenuItem
           icon="calendar"
           to="/history-and-stats"
