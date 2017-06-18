@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, Button } from 'react-native';
+import { Link } from 'react-router-native';
 
 export default class HomePage extends Component {
   render() {
@@ -44,7 +45,9 @@ export default class HomePage extends Component {
             </Text>
           </View>
           <View style={styles.logRide}>
-            <Button title="I'm biking today" backgroundColor="#2196f3" />
+            <Link to="/record-ride">
+              <Button title="I'm biking today" backgroundColor="#2196f3" />
+            </Link>
           </View>
         </View>
       </View>

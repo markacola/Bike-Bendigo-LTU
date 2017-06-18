@@ -22,6 +22,7 @@ import Home from './screens/Home';
 import Login from './screens/Login';
 import CampusFacilities from './screens/CampusFacilities';
 import Settings from './screens/Settings';
+import RecordRide from './screens/RecordRide';
 
 // set this to something like '/login' to be redirected to the login screen
 const DEV_REDIRECT = '/settings';
@@ -94,6 +95,7 @@ class App extends React.Component {
             <Route path="/" exact component={Home} />
             <Route path="/campus-facilities" component={CampusFacilities} />
             <Route path="/settings" component={Settings} />
+            <Route path="/record-ride" component={RecordRide} />
           </Switch>
         </View>
       </Router>
